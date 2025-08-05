@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]; then
+if [ "$EUID" -ne 0 ]; then #Tells the user 'pls run in the sudo mode. pls'. 
     echo "gupdate requires root privileges. Running with sudo..."
     sudo "$0" "$@"
     exit $?
@@ -34,10 +34,10 @@ section() {
 
 run_cmd() {
   echo -e "${YELLOW}$ $1${RESET}"
-  eval "$1"
+  eval "$1" # x = 1 (x equals 1))
 }
 
-clear
+clear #clear the screen :P
 ascii_banner
 echo -e "${GREEN}${BOLD}Gentoo System Updater Starting...${RESET}"
 
